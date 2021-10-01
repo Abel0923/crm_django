@@ -1,3 +1,5 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,22 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DJCRM</title>
+    <link rel="stylesheet" href="{% static 'css/' %}" />
     <style>
-      .lead{
+      .lead {
         padding-top: 10px;
         padding-bottom: 10px;
         padding-left: 6px;
-        margin-top:10px;
+        margin-top: 10px;
         background-color: #f6f6f6;
-        width:100%;
+        width: 100%;
       }
     </style>
   </head>
   <body>
-
-        {% block content %}
-
-        {% endblock content%}
-        {% include "scripts.html" %}
+    <div class="max-w-7xl mx-auto">
+      {% include 'navbar.html' %} {% block content %} {% endblock content%}
+    </div>
+    {% include "scripts.html" %}
   </body>
 </html>

@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'leads'
+    'leads',
+
+    'agents'
 ]
 
 MIDDLEWARE = [
@@ -121,3 +123,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'leads.User'
+STATICFILES_DIRS = [
+    BASE_DIR/"static"
+]
+
+STATIC_ROOT = "static_root"
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+LOGIN_REDIRECT_URL = "/leads"
+LOGIN_URL = "/login"
